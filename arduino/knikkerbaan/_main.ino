@@ -1,6 +1,6 @@
 #include <Arduino_JSON.h>
 
-KnikkerPoort poortBoven = KnikkerPoort (BOVEN_POORT_PIN, 0, 90);
+KnikkerPoort poortBoven = KnikkerPoort();
 WiFiCommunicator wifi = WiFiCommunicator(WIFI_NETWERK, WIFI_WACHTWOORD, SERVER_DOMEINNAAM);
 Teller tellerA = Teller(TELLER_A_PIN);
 
@@ -9,7 +9,9 @@ unsigned long tijdVoorContactMetServer = 0;
 
 void setup() {
   Serial.begin(9600);
-
+  
+  poortBoven.begin(BOVEN_POORT_PIN, 0, 90);
+  
   wifi.begin();
 
   wifi.stuurVerzoek("/api/set/nieuwerun", "");
