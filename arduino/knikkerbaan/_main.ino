@@ -14,7 +14,7 @@ void setup() {
   
   wifi.begin();
 
-  wifi.stuurVerzoek("/api/set/nieuwerun", "");
+  //wifi.stuurVerzoek("/api/set/nieuwerun", "");
 
   poortBoven.open();
 }
@@ -36,7 +36,7 @@ void loop() {
     Serial.print("Er zijn nu zoveel knikkers geteld: ");
     Serial.println(tellerA.getAantal());
 
-
+    tijdVoorContactMetServer = millis() + (unsigned long)serverContactInterval * 1000;
     // en zet nu het poortje weer open:
     poortBoven.open();
   }
