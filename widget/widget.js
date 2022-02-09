@@ -33,15 +33,41 @@ function setup() {
 function draw() {
   // schrijf hieronder de code van je widget
   // hieronder wordt schematisch een knikkerbaan getekend
-
+  var xRad = 40;
+  var yRad = 100;
   // achtergrond: houtkleur, kies gerust iets anders
-  background(175, 144, 105);
+  background(0, 0, 0);
 
+  noStroke();
+  ellipse(xRad, yRad, 65, 65);
+  fill(0, 0, 0);
+  ellipse(xRad + 20, yRad + 20, 20, 20);
+  ellipse(xRad - 20, yRad + 20, 20, 20);
+  ellipse(xRad, yRad - 30, 20, 20);
   // twee dikke strepen als 'opvangbak'
-  stroke(0, 0, 0);
-  strokeWeight(10);
-  line(50, 20, 135, 60);
-  line(250, 20, 165, 60);
+  stroke(255, 255, 255);
+  strokeWeight(5);
+  line(50, 7, 135, 40);
+  line(250, 7, 165, 40);
+  line(135, 40, 135, 50);
+  line(165, 40, 165, 50);
+  line(170, 70, 80, 100);
+  line(60, 135, 125, 175);
+  line(150, 200, 100, 220);
+  line(150, 200, 200, 220);
+  line(150, 200, 150, 500);
+  line(300, 210, 190, 250);
+  line(0, 210, 110, 250);
+  line(150, 260, 260, 300);
+  line(300, 310, 250, 340);
+  line(150, 320, 225, 345);
+  line(260, 330, 248, 326);
+
+  stroke(255, 255, 255);
+  strokeWeight(2);
+  fill(0 , 0, 0);
+  rect(125, 130, 50, 50);
+
 
   teller.show();
 }
