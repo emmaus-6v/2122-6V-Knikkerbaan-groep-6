@@ -39,11 +39,29 @@ function draw() {
   background(0, 0, 0);
 
   noStroke();
+
+  fill(255, 255, 255);
   ellipse(xRad, yRad, 65, 65);
+
+  fill(0, 51, 8);
+  triangle (70, 525, 150, 590, 230, 525);
+  rect(135, 570, 30, 30);
+
+  fill(150, 150, 150);
+  rect(255, 515, 17, 40);
+
+  fill(0, 0, 255);
+  rect(260, 520, 7, 30);
+
+  fill(100, 100, 100);
+  rect(260, 510, 7, 5);
+  rect(260, 555, 7, 17);
+
   fill(0, 0, 0);
   ellipse(xRad + 20, yRad + 20, 20, 20);
   ellipse(xRad - 20, yRad + 20, 20, 20);
   ellipse(xRad, yRad - 30, 20, 20);
+
   // twee dikke strepen als 'opvangbak'
   stroke(255, 255, 255);
   strokeWeight(5);
@@ -62,12 +80,53 @@ function draw() {
   line(300, 310, 250, 340);
   line(150, 320, 225, 345);
   line(260, 330, 248, 326);
+  line(150, 260, 110, 280);
+  line(110, 280, 90, 280);
+  line(90, 290, 70, 290);
+  line(70, 300, 50, 300);
+  line(50, 310, 30, 310);
+  line(90, 280, 90, 290);
+  line(70, 290, 70, 300);
+  line(50, 300, 50, 310);
+  line(0, 330, 110, 370);
+  line(150, 380, 70, 410);
+  line(250, 510, 250, 580);
+  line(290, 510, 290, 580);
+  line(250, 580, 290, 580);
 
   stroke(255, 255, 255);
   strokeWeight(2);
   fill(0 , 0, 0);
   rect(125, 130, 50, 50);
+  ellipse(20, 400, 20, 20);
+  ellipse(30, 420, 20, 20);
+  ellipse(45, 435, 20, 20);
+  ellipse(65, 445, 20, 20);
+  ellipse(85, 455, 20, 20);
+  ellipse(105, 465, 20, 20);
+  ellipse(225, 420, 110, 110);
+ 
+  noStroke();
+  fill(0, 0, 0);
+  rect(222, 355, 30, 30);
+  rect(192, 445, 100, 60);
+  rect(250, 400, 60, 60);
 
+  stroke(255, 255, 255);
+  strokeWeight(2);
+  line(276, 400, 276, 500);
+  line(276, 500, 272, 505);
+  line(220, 390, 220, 470);
+  line(220, 470, 250, 510);
+  line(220, 470, 190, 515);
+
+  stroke(220, 220, 220);
+  strokeWeight(1);
+  fill(150, 150, 150);
+  ellipse(263.5, 558, 10, 3);
+  ellipse(263.5, 561, 10, 3);
+  ellipse(263.5, 564, 10, 3);
+  ellipse(263.5, 567, 10, 3);
 
   teller.show();
 }
