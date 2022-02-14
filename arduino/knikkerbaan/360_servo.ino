@@ -7,7 +7,7 @@ Servo myservo;
 
 void setup() {
 
-  myservo.attach(9);
+  myservo.attach(5);
 
 }
 
