@@ -1,4 +1,9 @@
 #include <Arduino_JSON.h>
+#include <Servo.h>
+
+Servo myservo;
+
+
 
 KnikkerPoort poortBoven = KnikkerPoort();
 WiFiCommunicator wifi = WiFiCommunicator(WIFI_NETWERK, WIFI_WACHTWOORD, SERVER_DOMEINNAAM);
@@ -12,11 +17,14 @@ void setup() {
   
   poortBoven.begin(BOVEN_POORT_PIN, 0, 90);
   
-  wifi.begin();
+  //wifi.begin();
 
   //wifi.stuurVerzoek("/api/set/nieuwerun", "");
 
   poortBoven.open();
+
+  myservo.attach(3);
+
 }
 
 
@@ -39,5 +47,8 @@ void loop() {
     tijdVoorContactMetServer = millis() + (unsigned long)serverContactInterval * 1000;
     // en zet nu het poortje weer open:
     poortBoven.open();
+
+     myservo.write(80);
+
   }
 }
