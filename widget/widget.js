@@ -6,6 +6,7 @@ const UPDATE_INTERVAL = 5000;   // tijd in milliseconden tussen het door widget 
 var button;
 var teller;
 var wachttijdInput;
+var wisselStaatRechts = false;
 
 
 /**
@@ -21,12 +22,20 @@ function setup() {
 
   // knop voor instellingen
   button = createButton('Verstuur');
-  button.position(250, 575);
+  button.position(235, 50);
   button.mouseClicked(stuurNieuweInstellingen);
 
   wachttijdInput = createInput();
-  wachttijdInput.position(225, 70);
-  wachttijdInput. size(50);
+  wachttijdInput.position(180, 50);
+  wachttijdInput.size(50);
+
+  button = createButton('Links');
+  button.position(110, 110);
+  button.mouseClicked(links);
+
+  button = createButton('Rechts');
+  button.position(150, 110);
+  button.mouseClicked(rechts);
 
   // om de ... milliseconden wordt 'vraagSensorData' uitgevoerd
   setInterval(vraagSensorData, UPDATE_INTERVAL);
@@ -172,15 +181,27 @@ function vraagSensorData() {
 function stuurNieuweInstellingen() {
   var request = new XMLHttpRequest();
 
-  request.open('GET', 'api/set/instellingen?wachttijd=' + wachttijdInput.value(), true);
+  request.open('GET', '/api/set/instellingen?wachttijd=' + wachttijdInput.value() +"&wisselStaatRechts=" + wisselStaatRechts, true);
 
   request.onload = function (){
     if(request.status == 200){
-        console.log("Server accepteerde instellingen")
+        console.log("Server accepteerde instellingen");
     }
     else{
-      console.log("ser reageert niet zoals gehoopt");
+      console.log("Server reageert niet zoals gehoopt");
       console.log(request.response);
     }
   }
+  // verstuur het request
+  request.send()
+}
+
+//stuurt door dat er op knop links is geklikt
+function links(){
+  wisselStaatRechts = false;
+}
+
+//stuurt door dat er op knop links is geklikt
+function rechts(){
+  wisselStaatRechts = true;
 }

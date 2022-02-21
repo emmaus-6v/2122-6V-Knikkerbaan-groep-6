@@ -85,9 +85,10 @@ function getInstellingen(request, response) {
 function setInstellingen(request, response) {
   var huidigeRunID = geefHoogsteRunID();
   var wachttijd = request.query.wachttijd;
-  var SQL = `INSERT INTO instellingen (run, stamp, wachttijdPoort)
-              VALUES (?, CURRENT_TIMESTAMP, ?)`
-  db.prepare(SQL).run(huidigeRunID, wachttijd);
+  var wisselStaatRechts = request.query.wisselStaatRechts;
+  var SQL = `INSERT INTO instellingen (run, stamp, wachttijdPoort, wisselStaatRechts)
+              VALUES (?, CURRENT_TIMESTAMP, ?, ?)`
+  db.prepare(SQL).run(huidigeRunID, wachttijd, wisselStaatRechts);
   response.status(200).send();
 }
 

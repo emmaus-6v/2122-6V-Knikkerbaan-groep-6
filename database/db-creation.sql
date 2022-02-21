@@ -16,7 +16,8 @@ CREATE TABLE instellingen (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   run INTEGER NOT NULL,
   stamp DATETIME NOT NULL,
-  wachttijdPoort INTEGER NOT NULL
+  wachttijdPoort INTEGER NOT NULL,
+  wisselStaatRechts INTEGER NOT NULL
 );
 
 
@@ -24,4 +25,4 @@ CREATE TABLE instellingen (
    voeg hieronder dan INSERT regels to */
 INSERT INTO runs (stamp) VALUES (CURRENT_TIMESTAMP);
 INSERT INTO sensorData (run, stamp, aantalKnikkers) VALUES (1, CURRENT_TIMESTAMP, 3);
-INSERT INTO instellingen (run, stamp, wachttijdPoort) VALUES (1, CURRENT_TIMESTAMP, 15);
+INSERT INTO instellingen (run, stamp, wachttijdPoort, wisselStaatRechts) VALUES (1, CURRENT_TIMESTAMP, 15, 0);
