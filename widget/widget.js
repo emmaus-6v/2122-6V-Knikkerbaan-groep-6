@@ -5,7 +5,7 @@ var wachttijd = 15;             // wachttijd voor het poortje in seconden
 const UPDATE_INTERVAL = 5000;   // tijd in milliseconden tussen het door widget opvragen van gegevens
 var button;
 var teller;
-var wachtijdInput;
+var wachttijdInput;
 
 
 /**
@@ -19,6 +19,14 @@ function setup() {
 
   teller = new Teller(150, 50);
 
+  // knop voor instellingen
+  button = createButton('Verstuur');
+  button.position = (250, 575);
+  button.mouseClicked(stuurNieuweInstellingen);
+
+  wachttijdInput = createInput();
+  wachttijdInput.position = (225, 70);
+  wachttijdInput. size(50);
 
   // om de ... milliseconden wordt 'vraagSensorData' uitgevoerd
   setInterval(vraagSensorData, UPDATE_INTERVAL);
@@ -162,5 +170,17 @@ function vraagSensorData() {
 // stuurt een http-verzoek aan de server met de
 // nieuwe instellingen
 function stuurNieuweInstellingen() {
-  // moet nog worden gemaakt
+  var request = new XMLHttpRequest();
+
+  request.open('GET', 'api/set/instellingen?wachttijd=' + wachttijdInput.value(), true);
+
+  request.onload = function (){
+    if(request.status == 200){
+        console.log("Server accepteerde instellingen")
+    }
+    else{
+      console.log("ser reageert niet zoals gehoopt");
+      console.log(request.response);
+    }
+  }
 }
