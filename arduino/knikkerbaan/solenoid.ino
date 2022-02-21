@@ -14,5 +14,5 @@ void loop() {
   digitalWrite(SolenoidPin, HIGH);   
   delay(1000);                       
   digitalWrite(SolenoidPin, LOW);    
-  delay(1000);                       
+  delay(10000);                       
 }
