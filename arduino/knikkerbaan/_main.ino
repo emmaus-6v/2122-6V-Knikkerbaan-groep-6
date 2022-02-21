@@ -17,9 +17,9 @@ void setup() {
   
   poortBoven.begin(BOVEN_POORT_PIN, 0, 90);
   
-  //wifi.begin();
+  wifi.begin();
 
-  //wifi.stuurVerzoek("/api/set/nieuwerun", "");
+  wifi.stuurVerzoek("/api/set/nieuwerun", "");
 
   poortBoven.open();
 
@@ -43,6 +43,11 @@ void loop() {
   if (millis() > tijdVoorContactMetServer + LEEGLOOP_TIJD) {
     Serial.print("Er zijn nu zoveel knikkers geteld: ");
     Serial.println(tellerA.getAantal());
+
+    String data = "knikkers=";
+    data += tellerA.getAantal();
+
+    wifi.stuurVerzoek("/api/set/sensordata", data. c_str());
 
     tijdVoorContactMetServer = millis() + (unsigned long)serverContactInterval * 1000;
     // en zet nu het poortje weer open:
