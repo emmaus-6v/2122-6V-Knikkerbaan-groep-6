@@ -21,11 +21,11 @@ function setup() {
 
   // knop voor instellingen
   button = createButton('Verstuur');
-  button.position = (250, 575);
+  button.position(250, 575);
   button.mouseClicked(stuurNieuweInstellingen);
 
   wachttijdInput = createInput();
-  wachttijdInput.position = (225, 70);
+  wachttijdInput.position(225, 70);
   wachttijdInput. size(50);
 
   // om de ... milliseconden wordt 'vraagSensorData' uitgevoerd
