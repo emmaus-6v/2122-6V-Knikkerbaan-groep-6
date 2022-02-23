@@ -199,9 +199,11 @@ function stuurNieuweInstellingen() {
 //stuurt door dat er op knop links is geklikt
 function links(){
   wisselStaatRechts = false;
+  stuurNieuweInstellingen(); //to do kijken of deze haakjes en functie kloppen
 }
 
 //stuurt door dat er op knop links is geklikt
 function rechts(){
   wisselStaatRechts = true;
+  stuurNieuweInstellingen(); //to do kijken of deze haakjes en functie kloppen
 }
