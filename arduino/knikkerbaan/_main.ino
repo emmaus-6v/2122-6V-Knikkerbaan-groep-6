@@ -1,7 +1,7 @@
 #include <Arduino_JSON.h>
 #include <Servo.h>
 
-Servo myservo;
+Servo servo360;
 
 
 
@@ -24,7 +24,7 @@ void setup() {
 
   poortBoven.open();
 
-  myservo.attach(3);
+  servo360.attach(3);
 
 }
 
@@ -56,7 +56,7 @@ void loop() {
     // en zet nu het poortje weer open:
     poortBoven.open();
 
-     myservo.write(80);
+     servo360.write(80);
 
   }
 }
