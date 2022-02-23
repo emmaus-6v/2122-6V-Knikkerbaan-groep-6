@@ -13,7 +13,6 @@ int serverContactInterval = 15; // 15 seconden
 bool wisselRechts = false; 
 unsigned long tijdVoorContactMetServer = 0;
 unsigned long tijdWisselScheef = 0;
-unsigned long tijdWisselMidden = 0;
 
 
 void setup() {
