@@ -56,7 +56,7 @@ Begonnen met de onderdelen van de knikerbaan uit te printen op de 3D-printer en 
 Veel in het HT-lokaal gewerkt voor het zagen en lijmen van de onderdelen van de knikkerbaan. Verder gegaan met de code. 
 
 ### week 7 
-De plank hebben we zwart gevervd en we hebben de knikkerbaan in elkaar gezet. Veel features waren al afgerond.
+De plank hebben we zwart geverfd en we hebben de knikkerbaan in elkaar gezet. Veel features waren al afgerond.
 
 ### week 8
 De kleinde dingen die in de baan ontbraken hebben we op de baan geplakt en de code die misten zijn afgerond. 
@@ -67,20 +67,22 @@ De kleinde dingen die in de baan ontbraken hebben we op de baan geplakt en de co
 Geef hier bijvoorbeeld de volgene informatie, maar voel je vrij er informatie aan toe te voegen.
 
 De Arduino werkt op de volgende manier:
+De arduino stuurt verschillende poortjes en sensoren aan met behulp van classes. Verder hebben we zelf classes gemaakt voor de wissel en de solenoid. De code van de RGB sensor het het ledje waar hij mee samenwerkt in de main tab gezet, aangezien dit erg lastig is om een class van te maken. Ook de code van het rad staat in de main, omdat deze code er kort en simpel was.
 
 De knikkerbaan en de widget wisselen de volgende data met elkaar uit:
+Op de widget kan de wachttijd van het eerste poortje handmatig worden ingesteld en deze informatie haalt de arduino op uit de database. Ook kan er op de widget gekozen worden of de wissel in het kleuren doosje naar links of rehts beweegt dit voert de arduino dan uit. Het aantal waargenomen knikkers bij het eerste poortje wordt door de arduino doorgestuurd en daardoor komt deze via de data base op de widget.
 
-We hebben dat op deze manier genormaliseerd in een database opgenomen (neem een strokendiagram op). De reden dat we voor ... kiezen is...
+In de database hebben we een kolom toegevoegd voor de wachttijd op de widget wordt ingevuld en een kolom voor of er op de widget links of rechts is gekozen bij de wissel.
 
 Uitdagingen die we tegenkwamen:
-
+Dat de techniek niet altijd meewerkt en dat er veel tijd in kan gaan zitten om een erg klein probleem op te lossen.
 
 ## Reflectie op opdracht
 #### --Precia--
 Ik vond deze opdracht best lastig aangezien we ineens al onze kennis over programmeren bij elkaar moesten gooien. Daarnaast heb ik er wel veel van geleerd en ik vond het ook wel leuk hoe wij met een wat groter groepje toch hebben kunnen overleggen hoe we het eruit wilde laten zien. 
 
-#### --leerling2--
-
+#### --Sanne--
+Ik vond het een erg leuke, maar ook lastige opdracht. Het was erg leuk omdat we zoveel creatieve vrijheid hadden. Ik vond het erg lastig, omdat we bij erg veel onderdelen tegen problemen aan konden lopen waar we soms echt hulp bij nodig hadden en corona maakte dit soms erg lastig, waardoor vragen soms erg lang moesten wachten. Ik vind het daarom ook erg jammer dat we bijvoorbeeld de solenoid niet hard genoeg kunnen afschieten om de looping goed door te komen. Ik denk dat we zonder de problemen vanwege corona toch nog meer uit het project hadden kunnen halen dan nu, maar als nog vond ik het erg leuk om een beetje alle dingen die we de afgelopen jaren bij informatica hebben geleerd te combineren.
 
 
 
