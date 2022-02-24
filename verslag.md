@@ -59,7 +59,7 @@ Veel in het HT-lokaal gewerkt voor het zagen en lijmen van de onderdelen van de 
 De plank hebben we zwart gevervd en we hebben de knikkerbaan in elkaar gezet. Veel features waren al afgerond.
 
 ### week 8
-De kleinde dingen die in de baan ontbraken hebben we op de baan geplakt en de code die mistte is afgerond. 
+De kleinde dingen die in de baan ontbraken hebben we op de baan geplakt en de code die misten zijn afgerond. 
 
 
 
