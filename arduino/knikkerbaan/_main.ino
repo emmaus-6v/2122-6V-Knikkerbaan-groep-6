@@ -150,7 +150,7 @@ void loop() {
   
     tcs.setInterrupt(false);  // RGB LED aan
   
-    //delay(60);  // heeft 60ms om te lezen
+    // heeft 60ms nodig om te lezen
     if(millis() > tijdRGBSensor){
       tcs.getRGB(&red, &green, &blue);
       
