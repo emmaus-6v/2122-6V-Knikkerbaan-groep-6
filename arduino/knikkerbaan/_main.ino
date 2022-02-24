@@ -7,7 +7,7 @@
 #define greenpin 10
 #define bluepin 11
 
-// common cathode LED
+// common cathode LED voor RGB sensor
 #define commonAnode false
 byte gammatable[256];
 Adafruit_TCS34725 tcs = Adafruit_TCS34725(TCS34725_INTEGRATIONTIME_50MS, TCS34725_GAIN_4X);
