@@ -84,6 +84,8 @@ Ik vond deze opdracht best lastig aangezien we ineens al onze kennis over progra
 #### --Sanne--
 Ik vond het een erg leuke, maar ook lastige opdracht. Het was erg leuk omdat we zoveel creatieve vrijheid hadden. Ik vond het erg lastig, omdat we bij erg veel onderdelen tegen problemen aan konden lopen waar we soms echt hulp bij nodig hadden en corona maakte dit soms erg lastig, waardoor vragen soms erg lang moesten wachten. Ik vind het daarom ook erg jammer dat we bijvoorbeeld de solenoid niet hard genoeg kunnen afschieten om de looping goed door te komen. Ik denk dat we zonder de problemen vanwege corona toch nog meer uit het project hadden kunnen halen dan nu, maar als nog vond ik het erg leuk om een beetje alle dingen die we de afgelopen jaren bij informatica hebben geleerd te combineren.
 
+#### --Olivier--
+Ik vond het een hele leerzame en leuke opdracht. Ik heb het zelden echt leuk tijdens een PO voor school, maar dit PO was wat dat betreft absoluut een uitzondering. Natuurlijk ging niet alles zoals verwacht, maar van dat soort tegenslagen kan je leren zodat je deze fouten niet nog een keer maakt.
 
 
 ## Slot
