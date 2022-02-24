@@ -24,9 +24,9 @@ void setup() {
   poortBoven.begin(BOVEN_POORT_PIN, 0, 90);
   wisselPoort.begin(WISSEL_PIN, 0, 90, 45);
 
-  wifi.begin();
+  //wifi.begin();
 
-  wifi.stuurVerzoek("/api/set/nieuwerun", "");
+  //wifi.stuurVerzoek("/api/set/nieuwerun", "");
 
   poortBoven.open();
   wisselPoort.midden();
@@ -79,47 +79,34 @@ void loop() {
 
     tijdVoorContactMetServer = millis() + (unsigned long)serverContactInterval * 1000;
 
-    /*if(wisselRechts == true && wisselPoort.getMidden() && tellerB.getAantal() > oudAantalKnikkers){
+    /*if (wisselPoort.getMidden() && tellerB.getAantal() > oudAantalKnikkers) {
+      Serial.println("Knikker waargenomen");
+      Serial.println(tellerB.getAantal());
+      knikkerWaargenomen = true;
+    }
+
+    if (knikkerWaargenomen == true) {
+      Serial.println("tijd in doosje wordt bepaald");
       tijdKnikkerInDoosje = millis() + 3000;
-      if( millis() > tijdKnikkerInDoosje){
-        wisselPoort.rechts();
+      if (millis() >  tijdKnikkerInDoosje) {
+        Serial.println("tijd in doosje is voorbij");
+        if (wisselRechts == true) {
+          wisselPoort.rechts();
+        }
+        else {
+          wisselPoort.links();
+        }
         tijdWisselScheef = millis() + 3000;
-          if(millis() > tijdWisselScheef && !wisselPoort.getMidden()){
+        if (millis() > tijdWisselScheef && !wisselPoort.getMidden()) {
+          Serial.println("wissel gaat weer sluiten");
           wisselPoort.midden();
         }
       }
-      }*/
-
-
-    /*if(wisselRechts == false && wisselPoort.getMidden()){
-      wisselPoort.links();
-      tijdWisselScheef = millis() + 3000;
-      if(millis() > tijdWisselScheef && !wisselPoort.getMidden()){
-        wisselPoort.midden();
-      }*/
-  }
-/*
-  if (wisselPoort.getMidden() && tellerB.getAantal() > oudAantalKnikkers) {
-    Serial.println("Knikker waargenomen");
-    Serial.println(tellerB.getAantal());
-    knikkerWaargenomen = true;
-  }
-
-  if (knikkerWaargenomen == true) {
-    Serial.println("tijd in doosje wordt bepaald");
-    tijdKnikkerInDoosje = millis() + 3000;
-    knikkerWaargenomen = false;
-    oudAantalKnikkers = oudAantalKnikkers + 1;
-  }
-
-  if (millis() >  tijdKnikkerInDoosje) {
-    Serial.println("tijd in doosje is voorbij");
-    wisselPoort.rechts();
-    tijdWisselScheef = millis() + 3000;
-    if (millis() > tijdWisselScheef && !wisselPoort.getMidden()) {
-      Serial.println("wissel gaat weer sluiten");
-      wisselPoort.midden();
+      knikkerWaargenomen = false;
+      oudAantalKnikkers = oudAantalKnikkers + 1;
     }
+
+    */
 
     // en zet nu het poortje weer open:
     poortBoven.open();
@@ -127,6 +114,6 @@ void loop() {
     servo360.write(80);
 
   }
-  delay(50);
-  */
+  /*delay(50);*/
+  
 }
