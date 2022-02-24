@@ -5,8 +5,10 @@ var wachttijd = 15;             // wachttijd voor het poortje in seconden
 const UPDATE_INTERVAL = 5000;   // tijd in milliseconden tussen het door widget opvragen van gegevens
 var button;
 var teller;
+var solenoid;
 var wachttijdInput;
 var wisselStaatRechts = false;
+
 
 
 /**
@@ -19,6 +21,7 @@ function setup() {
   createCanvas(300, 600);
 
   teller = new Teller(150, 50);
+  solenoid = new Solenoid(255, 515, 510, -2);
 
   // knop voor instellingen
   button = createButton('Verstuur');
@@ -64,15 +67,6 @@ function draw() {
   triangle (70, 525, 150, 590, 230, 525);
   rect(135, 570, 30, 30);
 
-  fill(150, 150, 150);
-  rect(255, 515, 17, 40);
-
-  fill(0, 0, 255);
-  rect(260, 520, 7, 30);
-
-  fill(100, 100, 100);
-  rect(260, 510, 7, 5);
-  rect(260, 555, 7, 17);
 
   fill(0, 0, 0);
   ellipse(xRad + 20, yRad + 20, 20, 20);
@@ -137,15 +131,10 @@ function draw() {
   line(220, 470, 250, 510);
   line(220, 470, 190, 515);
 
-  stroke(220, 220, 220);
-  strokeWeight(1);
-  fill(150, 150, 150);
-  ellipse(263.5, 558, 10, 3);
-  ellipse(263.5, 561, 10, 3);
-  ellipse(263.5, 564, 10, 3);
-  ellipse(263.5, 567, 10, 3);
 
   teller.show();
+  solenoid.update();
+  solenoid.show();
 }
 
 
