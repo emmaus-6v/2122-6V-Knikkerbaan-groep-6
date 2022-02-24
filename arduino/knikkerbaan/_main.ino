@@ -19,6 +19,7 @@ Wissel wisselPoort = Wissel();
 WiFiCommunicator wifi = WiFiCommunicator(WIFI_NETWERK, WIFI_WACHTWOORD, SERVER_DOMEINNAAM);
 Teller tellerA = Teller(TELLER_A_PIN);
 Teller tellerB = Teller(TELLER_B_PIN);
+Solenoid solenoid = Solenoid(SOLENOID_A_PIN);
 
 int serverContactInterval = 15; // 15 seconden
 int oudAantalKnikkers = 0;
@@ -77,7 +78,7 @@ void loop() {
   // laat de teller detecteren:
   tellerA.update();
   tellerB.update();
-
+  solenoid.update();
   
   // pauzeer de knikkerbaan als het tijd is voor contact met server
   if (millis() > tijdVoorContactMetServer && poortBoven.getOpen()) {
