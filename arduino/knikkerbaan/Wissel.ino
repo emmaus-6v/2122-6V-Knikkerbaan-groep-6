@@ -18,7 +18,7 @@ class Wissel {
       wisselServo.attach(pin);
       gradenLinks = _gradenLinks;
       gradenRechts = _gradenRechts;
-      gradenMidden = _ gradenMidden;
+      gradenMidden = _gradenMidden;
       midden();
     }
     
