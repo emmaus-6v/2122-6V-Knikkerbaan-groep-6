@@ -1,11 +1,10 @@
 # Verslag eindopdracht 6V
-### gemaakt door *--leerling1--*, *--leerling2--*, *etc*
+### gemaakt door *Sanne Versluis*, *Olivier Drees*, *Bo Goedhart*, *Arvind Sanchit*, *Precia Juwono*
 
 ---
 
 ## Inleiding
-Lorem ipsum...
-
+Wij hebben met een groepje van vijf een knikkerbaan gebouwd. Samen hebben we nagedacht over het ontwerp ervan en het bevat uiteindelijk best een aantal verschillende features, die we allemaal wel leuk vonden om in onze knikkerbaan te verwerken.  
 
 
 ## Features
@@ -20,28 +19,47 @@ De knikkerbaan zendt de hoeveelheid getelde knikkers naar een server die de gege
 ### feature 3: Widget wisselt info uit met knikkerbaan
 In de browser kan met een URL een widget worden geladen. Deze geeft de knikkerbaan schematisch weer in een frame van 800x400px. De getelde knikkers en duur dat de poort openstaat worden hierin getoond. De duur dat de poort openstaat kan hierin worden veranderd. De knikkerbaan kan deze wachttijd van de server ontvangen en zijn werking erop aanpassen.
 
-### feature 4:
-<beschrijf hier feature 4>
+### feature 4: Draairad 
+In onze knikkerbaan hebben wij de knikkers die vanuit de opvangtrechter komen, in een rad te laten draaien. Het rad draait met en servo die 360 graden kan draaien. 
 
+### feature 5: Kleurendoos en LED
+Nadat de knikkers door het rad zijn geweest, gaan ze door een kleurendoosje heen. Hierin zit de kleurensensor verwerkt. ZOdra de kleurensensor de knikker heeft gescanned wordt de kleur van de knikker weergegeven op de LED ernaast. De kleurendoos kan de knikkers twee verschillende kanten op laten gaan. Dit wordt gedaan door het onderste plankje van de kleurendoos, die is verbonden aan een servo.
 
-### feature 5:
-<beschrijf hier feature 5>
-
-
-### feature 6:
-<beschrijf hier feature 6>
-
+### feature 6: Looping
+Op het einde van de rechter baan is er een looping in verwerkt. Dit hebben wij gedaan met een solenoid die de knikkers ophoog schieten. De rest van de onderdelen van de looping is met een 3D-printer uitgeprint. 
 
 
 ## Evaluaties van scrumplanningen:
 
 ### week 43
+De eerste week van de start van het project hebben we eerst goed nagedacht hoe we het eruit wilden laten zien.
 
 ### week 44
+In deze week hebben we ons plan wat meer uigewerkt en we begonnen ook met het schetsen ervan.
 
 ### week 45
+Ons plan voor de knikkerbaan was duidelijk, dus we konden beginnen met het schetsen op de plank. 
 
-### week ...
+### week 48 
+De schets op de plank moest afgemaakt worden. Er was ook een begin gemaakt aan de code. 
+
+### week 49
+Verder gewerkt aan de schets op de plank en kleine aanpassingen in de baan gemaakt. 
+
+### week 50 
+Er is veel gewerkt aan de code voor de knikkerbaan. De schets op de plank was af. 
+
+### week 2
+Begonnen met de onderdelen van de knikerbaan uit te printen op de 3D-printer en het snijden van de onderdelen van de baan. 
+
+### week 6 
+Veel in het HT-lokaal gewerkt voor het zagen en lijmen van de onderdelen van de knikkerbaan. Verder gegaan met de code. 
+
+### week 7 
+De plank hebben we zwart gevervd en we hebben de knikkerbaan in elkaar gezet. Veel features waren al afgerond.
+
+### week 8
+De kleinde dingen die in de baan ontbraken hebben we op de baan geplakt en de code die mistte is afgerond. 
 
 
 
@@ -58,8 +76,8 @@ Uitdagingen die we tegenkwamen:
 
 
 ## Reflectie op opdracht
-#### --leerling1--
-*(50 - 100 woorden. Geef o.a. wat je tijdens deze opdracht beter onder de knie hebt gekregen en welk leerpunt je voor jezelf meeneemt)*
+#### --Precia--
+Ik vond deze opdracht best lastig aangezien we ineens al onze kennis over programmeren bij elkaar moesten gooien. Daarnaast heb ik er wel veel van geleerd en ik vond het ook wel leuk hoe wij met een wat groter groepje toch hebben kunnen overleggen hoe we het eruit wilde laten zien. 
 
 #### --leerling2--
 
@@ -67,3 +85,4 @@ Uitdagingen die we tegenkwamen:
 
 
 ## Slot
+Na al die maanden is het project toch afgerond en gelukkig zijn we allemaal best blij en trots op het eindresultaat. Het proces duurde wel lang, maar we konden allemaal ons eigen ding doen en het is toch goedgekomen, ondanks de maatregelen ivm corona en het feit dat een aantal van ons ook corona heeft gehad in de afgelopen maanden. 
