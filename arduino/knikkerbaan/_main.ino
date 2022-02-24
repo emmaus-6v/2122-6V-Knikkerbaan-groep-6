@@ -4,13 +4,16 @@
 Servo servo360;
 
 KnikkerPoort poortBoven = KnikkerPoort();
-Wissel wisselPoort = KnikkerPoort();
+Wissel wisselPoort = Wissel();
 WiFiCommunicator wifi = WiFiCommunicator(WIFI_NETWERK, WIFI_WACHTWOORD, SERVER_DOMEINNAAM);
 Teller tellerA = Teller(TELLER_A_PIN);
 Teller tellerB = Teller(TELLER_B_PIN);
 
 int serverContactInterval = 15; // 15 seconden
-bool wisselRechts = false; 
+int oudAantalKnikkers = 0;
+int tijdKnikkerInDoosje = 3000;
+bool wisselRechts = false;
+bool knikkerWaargenomen = false; 
 unsigned long tijdVoorContactMetServer = 0;
 unsigned long tijdWisselScheef = 0;
 
@@ -36,6 +39,7 @@ void setup() {
 void loop() {
   // laat de teller detecteren:
   tellerA.update();
+  tellerB.update();
 
   
   // pauzeer de knikkerbaan als het tijd is voor contact met server
@@ -72,20 +76,31 @@ void loop() {
 
     tijdVoorContactMetServer = millis() + (unsigned long)serverContactInterval * 1000;
 
-    if(wisselRechts = true && staatMidden = true){
-      wisselPoort.rechts();
-      tijdWisselScheef = millis() + 3000;
-      if(millis() > tijdWisselScheef && !wisselPoort.getMidden){
-        wisselPoort.midden();
-      }
+    if (wisselPoort.getMidden() && tellerB.getAantal() > oudAantalKnikkers) {
+      Serial.println("Knikker waargenomen");
+      Serial.println(tellerB.getAantal());
+      knikkerWaargenomen = true;
     }
-    
-    if(wisselRechts = false && staatMidden = true){
-      wisselPoort.links();
-      tijdWisselScheef = millis() + 3000;
-      if(millis() > tijdWisselScheef && !wisselPoort.getMidden){
-        wisselPoort.midden();
+
+    if (knikkerWaargenomen == true) {
+      Serial.println("tijd in doosje wordt bepaald");
+      tijdKnikkerInDoosje = millis() + 3000;
+      if (millis() >  tijdKnikkerInDoosje) {
+        Serial.println("tijd in doosje is voorbij");
+        if (wisselRechts == true) {
+          wisselPoort.rechts();
+        }
+        else {
+          wisselPoort.links();
+        }
+        tijdWisselScheef = millis() + 3000;
+        if (millis() > tijdWisselScheef && !wisselPoort.getMidden()) {
+          Serial.println("wissel gaat weer sluiten");
+          wisselPoort.midden();
+        }
       }
+      knikkerWaargenomen = false;
+      oudAantalKnikkers = oudAantalKnikkers + 1;
     }
       
     // en zet nu het poortje weer open:
