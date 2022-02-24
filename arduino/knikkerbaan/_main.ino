@@ -1,5 +1,16 @@
 #include <Arduino_JSON.h>
 #include <Servo.h>
+#include <Wire.h>
+#include "Adafruit_TCS34725.h"
+
+#define redpin 6
+#define greenpin 10
+#define bluepin 11
+
+// common cathode LED
+#define commonAnode false
+byte gammatable[256];
+Adafruit_TCS34725 tcs = Adafruit_TCS34725(TCS34725_INTEGRATIONTIME_50MS, TCS34725_GAIN_4X);
 
 Servo servo360;
 
@@ -12,6 +23,7 @@ Teller tellerB = Teller(TELLER_B_PIN);
 int serverContactInterval = 15; // 15 seconden
 int oudAantalKnikkers = 0;
 int tijdKnikkerInDoosje = 3000;
+int tijdRGBSensor = 60;
 bool wisselRechts = false;
 bool knikkerWaargenomen = false; 
 unsigned long tijdVoorContactMetServer = 0;
@@ -32,6 +44,31 @@ void setup() {
   wisselPoort.midden();
 
   servo360.attach(3);
+
+  // Voor RGB sensor
+  if (tcs.begin()) {
+    //Serial.println("Found sensor");
+  } else {
+    Serial.println("No TCS34725 found ... check your connections");
+    while (1); // halt!
+  }
+
+  pinMode(redpin, OUTPUT);
+  pinMode(greenpin, OUTPUT);
+  pinMode(bluepin, OUTPUT);
+
+  for (int i=0; i<256; i++) {
+    float x = i;
+    x /= 255;
+    x = pow(x, 2.5);
+    x *= 255;
+
+    if (commonAnode) {
+      gammatable[i] = 255 - x;
+    } else {
+      gammatable[i] = x;
+    }
+  }
 
 }
 
@@ -106,7 +143,29 @@ void loop() {
     // en zet nu het poortje weer open:
     poortBoven.open();
 
-     servo360.write(80);
+    servo360.write(80);
 
+    // Voor RGB sensor
+    float red, green, blue;
+  
+    tcs.setInterrupt(false);  // RGB LED aan
+  
+    //delay(60);  // heeft 60ms om te lezen
+    if(millis() > tijdRGBSensor){
+      tcs.getRGB(&red, &green, &blue);
+      
+      tcs.setInterrupt(true);  // turn off LED
+    
+      Serial.print("R:\t"); Serial.print(int(red)); 
+      Serial.print("\tG:\t"); Serial.print(int(green)); 
+      Serial.print("\tB:\t"); Serial.print(int(blue));
+      Serial.print("\n");
+    
+      analogWrite(redpin, gammatable[(int)red]);
+      analogWrite(greenpin, gammatable[(int)green]);
+      analogWrite(bluepin, gammatable[(int)blue]);
+      
+      tijdRGBSensor = millis() + 60;
+    }
   }
 }
