@@ -12,4 +12,5 @@ char WIFI_WACHTWOORD[] = "informatica-rocks!";
 char SERVER_DOMEINNAAM[] = "";    // domeinnaam van gitpod-server, zoals 3000-lavendel-bla-bla.gitpod.io
 
 const int TELLER_A_PIN = 5;       // pin waarop IR-sensor voor Teller A is aangesloten
-const int TELLER_B_PIN = 11;       // pin waarop IR-sensor voor Teller B is aangesloten
+const int TELLER_B_PIN = 12;       // pin waarop IR-sensor voor Teller B is aangesloten
+const int SOLENOID_A_PIN = 13;     // pin waarop solenoid is aangesloten
