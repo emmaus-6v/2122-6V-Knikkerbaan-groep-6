@@ -20,7 +20,7 @@ class Solenoid{
         solenoidStatus = HIGH;
         solenoidTijd = huidigeTijd + 10000;
       }
-      if(solenoidStatus == HIGH){
+      else{
         solenoidStatus = LOW;
         solenoidTijd = huidigeTijd + 1000;
       }
