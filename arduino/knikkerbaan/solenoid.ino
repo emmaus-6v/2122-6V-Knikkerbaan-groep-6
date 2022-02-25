@@ -18,11 +18,11 @@ class Solenoid{
     if(huidigeTijd > solenoidTijd){
       if(solenoidStatus == LOW){
         solenoidStatus = HIGH;
-        solenoidTijd = huidigeTijd + 10000;
+        solenoidTijd = huidigeTijd + 1000;
       }
       else{
         solenoidStatus = LOW;
-        solenoidTijd = huidigeTijd + 1000;
+        solenoidTijd = huidigeTijd + 10000;
       }
       digitalWrite(pin, solenoidStatus);
     }
