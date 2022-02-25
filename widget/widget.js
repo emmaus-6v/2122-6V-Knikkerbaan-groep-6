@@ -63,15 +63,16 @@ function draw() {
   fill(255, 255, 255);
   ellipse(xRad, yRad, 65, 65);
 
-  fill(0, 51, 8);
-  triangle (70, 525, 150, 590, 230, 525);
-  rect(135, 570, 30, 30);
-
 
   fill(0, 0, 0);
   ellipse(xRad + 20, yRad + 20, 20, 20);
   ellipse(xRad - 20, yRad + 20, 20, 20);
   ellipse(xRad, yRad - 30, 20, 20);
+
+  stroke(255, 255, 255);
+  strokeWeight(2);
+  fill(0, 0, 0);
+  triangle (60, 525, 150, 630, 240, 525);
 
   // twee dikke strepen als 'opvangbak'
   stroke(255, 255, 255);
