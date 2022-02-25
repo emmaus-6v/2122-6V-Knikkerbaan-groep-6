@@ -87,6 +87,8 @@ Ik vond het een erg leuke, maar ook lastige opdracht. Het was erg leuk omdat we 
 #### --Olivier--
 Ik vond het een hele leerzame en leuke opdracht. Ik heb het zelden echt leuk tijdens een PO voor school, maar dit PO was wat dat betreft absoluut een uitzondering. Natuurlijk ging niet alles zoals verwacht, maar van dat soort tegenslagen kan je leren zodat je deze fouten niet nog een keer maakt. Al met al denk ik dat dit PO een groot succes was, zowel op het gebied van leerzaamheid als samenwerking.
 
+#### --Arvind--
+Ik vond het een leuke opdracht waar ook veel creativiteit bij kwam kijken. Desondanks het een leuke opdracht was was het ook een erg lastige opdracht en hebben we veel problemen gehad. Door corona hadden we nog wat extra problemen waardoor wij misschien beperkt waren in wat we echt konden doen maar toch denk ik dat we uiteindelijk toch iets moois hebben neer gezet.
 
 ## Slot
 Na al die maanden is het project toch afgerond en gelukkig zijn we allemaal best blij en trots op het eindresultaat. Het proces duurde wel lang, maar we konden allemaal ons eigen ding doen en het is toch goedgekomen, ondanks de maatregelen ivm corona en het feit dat een aantal van ons ook corona heeft gehad in de afgelopen maanden. 
