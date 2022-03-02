@@ -39,7 +39,7 @@ void setup() {
   Serial.begin(9600);
   
   // classes gegevens meegeven
-  poortBoven.begin(BOVEN_POORT_PIN, 0, 90);
+  poortBoven.begin(BOVEN_POORT_PIN, 0, 70);
   wisselPoort.begin(WISSEL_PIN,0, 90, 45);
   
   // voor wifi
