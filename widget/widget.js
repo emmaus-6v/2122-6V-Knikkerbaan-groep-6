@@ -22,6 +22,7 @@ function setup() {
 
   teller = new Teller(150, 50);
   solenoid = new Solenoid(255, 515, 510, -2);
+  poortje = new Poortje(135, 50, 165, 50, 0.2);
 
   // knop voor instellingen
   button = createButton('Verstuur');
@@ -74,7 +75,7 @@ function draw() {
   fill(0, 0, 0);
   triangle (60, 525, 150, 630, 240, 525);
 
-  // twee dikke strepen als 'opvangbak'
+  // dikke strepen waar de knikker door kan rollen
   stroke(255, 255, 255);
   strokeWeight(5);
   line(50, 7, 135, 40);
@@ -136,6 +137,8 @@ function draw() {
   teller.show();
   solenoid.update();
   solenoid.show();
+  poortje.update();
+  poortje.show();
 }
 
 
