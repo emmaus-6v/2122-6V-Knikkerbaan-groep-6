@@ -3,6 +3,7 @@
 #include <Wire.h>
 #include "Adafruit_TCS34725.h"
 
+// pins aangeven voor RGB LED
 #define redpin 6
 #define greenpin 10
 #define bluepin 11
@@ -12,8 +13,10 @@
 byte gammatable[256];
 Adafruit_TCS34725 tcs = Adafruit_TCS34725(TCS34725_INTEGRATIONTIME_50MS, TCS34725_GAIN_4X);
 
+//360 graden servo voor het rad
 Servo servo360;
 
+// alle classes aanroepen
 KnikkerPoort poortBoven = KnikkerPoort();
 Wissel wisselPoort = Wissel();
 WiFiCommunicator wifi = WiFiCommunicator(WIFI_NETWERK, WIFI_WACHTWOORD, SERVER_DOMEINNAAM);
@@ -21,6 +24,7 @@ Teller tellerA = Teller(TELLER_A_PIN);
 Teller tellerB = Teller(TELLER_B_PIN);
 Solenoid solenoid = Solenoid(SOLENOID_A_PIN);
 
+// gebruikte variabelen
 int serverContactInterval = 15; // 15 seconden
 int oudAantalKnikkers = 0;
 int tijdKnikkerInDoosje = 3000;
@@ -34,16 +38,19 @@ unsigned long tijdWisselScheef = 0;
 void setup() {
   Serial.begin(9600);
   
+  // classes gegevens meegeven
   poortBoven.begin(BOVEN_POORT_PIN, 0, 90);
   wisselPoort.begin(WISSEL_PIN,0, 90, 45);
   
+  // voor wifi
   //wifi.begin();
-
   //wifi.stuurVerzoek("/api/set/nieuwerun", "");
 
+  // begin staat van de servo poort en wissel
   poortBoven.open();
   wisselPoort.midden();
 
+  // pin van 360 graden servo aangeven
   servo360.attach(3);
 
   // Voor RGB sensor
@@ -75,7 +82,7 @@ void setup() {
 
 
 void loop() {
-  // laat de teller detecteren:
+  // update functies aanroepen
   tellerA.update();
   tellerB.update();
   solenoid.update();
@@ -114,6 +121,7 @@ void loop() {
 
     tijdVoorContactMetServer = millis() + (unsigned long)serverContactInterval * 1000;
 
+    // if-statements voor de wissel, zodat de wissel alleen gaat bewegen als er een knikker is waargenomen bij tellerB
     if (wisselPoort.getMidden() && tellerB.getAantal() > oudAantalKnikkers) {
       Serial.println("Knikker waargenomen");
       Serial.println(tellerB.getAantal());
@@ -141,9 +149,10 @@ void loop() {
       oudAantalKnikkers = oudAantalKnikkers + 1;
     }
       
-    // en zet nu het poortje weer open:
+    // zet nu het poortje weer open:
     poortBoven.open();
 
+    // geeft aan wat de 360 graden servo doet
     servo360.write(80);
 
     // Voor RGB sensor
