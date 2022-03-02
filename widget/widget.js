@@ -20,9 +20,11 @@ function setup() {
   // Maak het canvas van je widget
   createCanvas(300, 600);
 
-  teller = new Teller(150, 50);
+  // classes worden aangeroepen
+  teller = new Teller(147.5, 40);
   solenoid = new Solenoid(255, 515, 510, -2);
   poortje = new Poortje(135, 50, 165, 50, 0.2);
+  rad = new Rad(40, 100);
 
   // knop voor instellingen
   button = createButton('Verstuur');
@@ -54,21 +56,9 @@ function setup() {
 function draw() {
   // schrijf hieronder de code van je widget
   // hieronder wordt schematisch een knikkerbaan getekend
-  var xRad = 40;
-  var yRad = 100;
+
   // achtergrond: houtkleur, kies gerust iets anders
   background(0, 0, 0);
-
-  noStroke();
-
-  fill(255, 255, 255);
-  ellipse(xRad, yRad, 65, 65);
-
-
-  fill(0, 0, 0);
-  ellipse(xRad + 20, yRad + 20, 20, 20);
-  ellipse(xRad - 20, yRad + 20, 20, 20);
-  ellipse(xRad, yRad - 30, 20, 20);
 
   stroke(255, 255, 255);
   strokeWeight(2);
@@ -139,6 +129,7 @@ function draw() {
   solenoid.show();
   poortje.update();
   poortje.show();
+  rad.show();
 }
 
 
