@@ -90,5 +90,8 @@ Ik vond het een hele leerzame en leuke opdracht. Ik heb het zelden echt leuk tij
 #### --Arvind--
 Ik vond het een leuke opdracht waar ook veel creativiteit bij kwam kijken. Desondanks het een leuke opdracht was was het ook een erg lastige opdracht en hebben we veel problemen gehad. Door corona hadden we nog wat extra problemen waardoor wij misschien beperkt waren in wat we echt konden doen maar toch denk ik dat we uiteindelijk toch iets moois hebben neer gezet.
 
+#### --Bo--
+Ik vond de opdracht erg leuk omdat het niet alleen progammeren was maar ook het tot leven brengen van onze code. Dit, en de combi van verschillende technieken, bracht een stuk samenhang tussen alle dingen die we de afgelopen jaren hebben geleerd bij het vak informatica. Ik ben geen informatica expert dus ik had best wel wat moeite met sommige onderdelen, maar daar vulden we elkaar mooi aan als een team. Ik ben erg tevreden over het resultaat dat we hebben neergezet.
+
 ## Slot
 Na al die maanden is het project toch afgerond en gelukkig zijn we allemaal best blij en trots op het eindresultaat. Het proces duurde wel lang, maar we konden allemaal ons eigen ding doen en het is toch goedgekomen, ondanks de maatregelen ivm corona en het feit dat een aantal van ons ook corona heeft gehad in de afgelopen maanden. 
